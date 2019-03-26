@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VGStats", "VGStats\VGStats.csproj", "{A1BBB4CF-4254-49FB-81DE-9E6F035B41A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VGStats", "VGStats\VGStats.csproj", "{EF7AB937-933E-48C8-906C-27A7925E5143}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1BBB4CF-4254-49FB-81DE-9E6F035B41A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1BBB4CF-4254-49FB-81DE-9E6F035B41A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1BBB4CF-4254-49FB-81DE-9E6F035B41A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1BBB4CF-4254-49FB-81DE-9E6F035B41A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF7AB937-933E-48C8-906C-27A7925E5143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7AB937-933E-48C8-906C-27A7925E5143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7AB937-933E-48C8-906C-27A7925E5143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7AB937-933E-48C8-906C-27A7925E5143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {93CB068B-BFA3-472D-881C-E44DC0D10ADA}
+		SolutionGuid = {5687EF9B-E64F-4E2F-8E55-649FBB9CBDFD}
 	EndGlobalSection
 EndGlobal

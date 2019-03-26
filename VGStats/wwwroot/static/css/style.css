@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css?family=Hind|Jockey+One');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+html,body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+
+	color: #DDD;
+	background: #222;
+
+	font-family: Arial;
+}
+
+a,a:hover,a:active {
+	text-decoration: none;
+
+	color: #FFF;
+}
+
+a:hover {
+	color: #CCC;
+}
+
+h1,h2 {
+	display: block;
+
+	width: 90%;
+	margin: 1% 5%;
+	padding: 0.5% 0%;
+
+	text-align: center;
+
+	border-radius: 2px;
+	background: black;
+
+	font-family: "Hind";
+	font-weight: 400;
+}
+
+h1 {
+	background: url('/static/img/mapbase1024.png') !important;
+	text-shadow: 0px 0px 1px #333;
+
+	font-size: 20pt;
+}
+
+#header {
+	width: 100%;
+	margin-bottom: .25%;
+
+	border-bottom: 1px solid black;
+	background: #333;
+}
+
+#title {
+	display: inline-block;
+
+	margin: 0.75% 2%;
+	margin-right: 0.5em;
+
+	font-family: "Jockey One";
+	font-size: 14pt;
+}
+
+.centerpadded-small {
+	margin: auto 20%;
+	padding: 1em;
+
+	background: #333;
+}
+
+.centerpadded {
+	display: table;
+
+	width: 85%;
+	margin: auto 5%;
+	padding: 1em;
+}
+
+.warn {
+	padding: 4px;
+
+	color: #222;
+	background: #D45500;
+
+	font-family: "Hind", sans-serif;
+	font-weight: 800;
+}
+
+.indented {
+	text-indent: .75em;
+
+	-webkit-margin-before: .25em;
+	-webkit-margin-after: .25em;
+}
+
+#match-container {
+	display: table;
+
+	width: 60%;
+    margin: 0 auto;
+}
+
+.match {
+	display: table-row;
+
+	margin: 1px;
+
+	background: #333;
+}
+
+.match > * {
+	display: table-cell !important;
+
+	margin: auto 2%;
+}
+
+.match #match-title {
+	margin-bottom: .3em;
+
+	text-transform: capitalize;
+
+	font-size: 10pt;
+}
+
+thead > * {
+	padding: 4px;
+
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	background: #111111;
+
+	font-size: 8pt;
+}
+
+td {
+	text-align: center;
+}
+
+.single-match > tbody > tr > td {
+	background: #222;
+}
+
+.match img {
+	width: 32px;
+	height: 32px;
+	margin: 0 auto;
+}
+
+.gh {
+	padding: 3px 12px;
+
+	transition: color 0.25s, background 0.25s;
+
+	color: #37C837;
+	border: #37C837 2px solid;
+	border-radius: 30px;
+}
+
+.gh:hover {
+	color: #333;
+	background: #37C837;
+}
+
+.hdr {
+	float: right;
+
+	margin: 0px auto;
+}
+
+.matchhead {
+	color: #666;
+
+	font-size: 10pt;
+}
+
+.bigger-font {
+	font-size: 125%;
+	font-weight: 600;
+}
+
+.chart-wrapper {
+	display: inline-block;
+
+	width: 40%;
+	margin: 0 auto;
+}
+
+.chart-wrapper .chart-container .tick .y-value-text,
+.chart-wrapper .chart-container .tick .x-value-text  {
+	fill: #777;
+}
+
+#timelineChart .chart-container>.title,
+#timelineChart .chart-container>.sub-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+	color: #777;
+}
+
+#matchChart .chart-container .axis line {
+	stroke: #333;
+}
+
+#timelineChart .chart-container .axis line {
+	stroke: #444;
+}
+
+#matchPieChart .chart-container .indicator {
+	color: #777;
+}
+
+.gen-contain {
+	margin: 0 auto;
+
+	text-align: center;
+}
+
+#container {
+	width: 100%;
+}
+
+.pagination {
+	text-align: center;
+
+	color: #aaa;
+}
+
+.pagination strong {
+	color: #fff;
+}
+
+.antag {
+	margin-bottom: 1%;
+	padding: 1em;
+
+	background: #333;
+}
+
+.antag #player {
+	display: inline-block;
+}
+
+.antag #actor {
+	display: inline-block;
+	float: right;
+}
+
+.objective {
+	margin: 1%;
+	padding: 1%;
+
+	color: #222;
+	border-radius: 2px;
+}
+
+.success {
+	background: #779ECB;
+}
+
+.success::before {
+	content: "☑";
+}
+
+.failure {
+	background: #C23B22;
+}
+
+.failure::before {
+	content: "☒";
+}
+
+.gridhalf {
+	float: left;
+
+	width: 49.5%;
+	margin-left: 1%;
+}
+
+.gridcontainer .gridhalf:first-of-type {
+	margin-left: 0;
+}
+
+.gridcontainer {
+	margin-bottom: 1%;
+}
+
+.bottom-margin {
+	margin-bottom: 1%;
+}
+
+.matchdeath {
+	margin-bottom: 1%;
+	padding: .25em;
+
+	background: #333;
+}
+
+.matchdeath .lassailant {
+	float: right;
+}
+
+#roundinfo {
+	margin-top: 2.5%;
+	padding-top: 0.5em;
+}
+
+#roundinfo #mode {
+	text-transform: capitalize;
+}
+
+#roundinfo h3 {
+  text-align: center
+}
+
+.nav-button {
+	display: inline-block;
+
+	margin: .5em;
+
+	text-decoration: none;
+}
+
+.match.singular {
+	float: none;
+
+	margin: 0 auto;
+
+	background: #2a2a2a;
+}
+
+.centertext {
+	text-align: center;
+}
+
+.errorpage > div {
+	position: relative;
+	top: 50%;
+
+	margin: 0 auto;
+
+	transform: translateY(-50%);
+	text-align: center;
+
+	font-family: 'Space Mono',monospace;
+}
+
+.errorpage > div > p {
+	margin: 0;
+
+	font-size: 2000%;
+}
+
+.errorpage > div > a {
+	font-size: 200%;
+}
+
+.errorpage {
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	background-repeat: repeat;
+	background-position: 0 0;
+}
+
+#notfound {
+	animation: animatedBackground 40s linear infinite;
+
+	background: url(../img/mapbase1024.png);
+}
+
+@keyframes animatedBackground {
+	from {
+		background-position: 0 0;
+	}
+
+	to {
+		background-position: 100% 0;
+	}
+}
+
+#error {
+	background: url(../img/malf.gif);
+	background-size: 64px;
+}
+
+#error > div {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	background: rgba(50,50,50,0.5);
+}
+
+#error > div > p {
+	padding: 10px;
+
+	font-size: 400%;
+}
+
+#error > div > a,#error > div > a:hover {
+	text-decoration: none;
+
+	border: 5px solid #fff;
+}
+
+a.block {
+	display: block;
+
+	text-decoration: none;
+}
+
+.monthlynav {
+	margin: 0 auto;
+
+	text-align: center;
+
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.floatcontainer {
+	display: inline-block;
+}
+
+.floatcontainer > p {
+	font-weight: bold;
+}
+
+.floatleft {
+	display: inline-block;
+
+	margin-left: 2em;
+}
+
+.floatleft:first-of-type {
+	margin-left: 0;
+}
+
+.floatleft p {
+	margin: 0;
+}
+
+.timeline {
+	height: 50%;
+	max-height: 200%;
+
+	background-color: rgba(100,100,100,0);
+}
+
+.deaths {
+	position: relative;
+}
+
+/*any element with a tooltip as direct descendant being hovered on*/
+*:hover > .tooltip {
+	visibility: visible;
+}
+
+.tooltip {
+	position: absolute;
+	z-index: 1;
+	top: 120%;
+	left: -25%;
+
+	visibility: hidden;
+
+	width: 200px;
+	padding: 5px 0;
+
+	text-align: center;
+
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	font-size: 9pt;
+}
+
+.mostwidth {
+	width: 70%;
+}
+
+.centerdiv {
+	margin: 0 auto;
+}
+
+.changelog {
+	margin-top: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	background: #333;
+}
+
+.changelog-date {
+	font-size: 14pt;
+}
+
+.changelog-entry {
+	margin-right: 1em;
+	margin-left: 1em;
+	padding: 0.5em;
+	padding-right: 1em;
+	padding-left: 1em;
+
+	border: 1px solid rgba(100, 100, 100, 0.5);
+
+	font-size: 13pt;
+}
+
+.changelog-entry ul {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding: 0;
+
+	list-style: none;
+}
+
+.changelog-entry ul li {
+	padding-left: 1.5em;
+}
+
+.changelog-entry ul li::before {
+	display: inline-block;
+
+	width: 1.3em; /* same as padding-left set on li */
+	margin-left: -1.3em; /* same as padding-left set on li */
+
+	content: "\f141";
+
+	font-family: "FontAwesome";
+}
+
+.changelog-entry ul li.honk::before {
+	content: "\f0a1";
+
+	color: rgb(203, 189, 67);
+}
+
+.changelog-entry ul li.added::before {
+	content: "\f067";
+
+	color: rgb(85, 186, 85);
+}
+
+.changelog-entry ul li.removed::before {
+	content: '\f056';
+
+	color: rgb(163, 61, 61);
+}
+
+.changelog-entry ul li.bugfix::before {
+	content: '\f188';
+
+	color: rgb(145, 99, 206);
+}
+
+.justify {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.txtbtn {
+	padding: 0.5rem;
+	display: inline-block;
+	background: #0077BE;
+	/* border: 1px solid #222; */
+	border-radius: 0.2rem;
+	color: white;
+}
+
+.txtbtn:hover {
+	background: #0070B0;
+	color: white;
+}

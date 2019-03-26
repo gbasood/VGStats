@@ -1,0 +1,15 @@
+@model Match
+<tr class = 'match block'>
+    <td>@Model.StationName</td>
+    <td>@Model.MapName</td>
+    <td>@String.Format("{0:MM/dd/yy}", Model.StartTime)<br/>
+        @String.Format("{0:hh:mm}", Model.StartTime)<br/>
+        @Math.Floor(Model.RoundSpan.TotalMinutes) mins
+    </td>
+    <td class="bigger-font">@Model.CrewScore</td>
+    <td class="bigger-font">@(Model.Deaths?.Count ?? 0)</td>
+    <td>@Html.ActionLink("", "View", "Match", new
+        {
+            id=Model.Id
+        })<a href='/match/{{match.id}}' class="bigger-font">→</a></td>
+</tr>

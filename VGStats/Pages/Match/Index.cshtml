@@ -1,0 +1,67 @@
+﻿@model VGStats.Models.Match
+
+@{
+    ViewBag.Title = "Match List";
+    Layout = "_Layout";
+}
+
+<div id='roundinfo' class='centerpadded-small bottom-margin'>
+    <span class="matchhead">@Model.StartTime.ToString("MMM d yyyy") / @Model.RoundSpan min. (@Model.StartTime.ToString("t") to @Model.EndTime.ToString("t"))</span>
+    <h1>Round #@Model.Id</h1>
+    <h2 id='mode'>
+        @Model.MapName
+        <span class='deaths'>
+            &#9760;@Model.GetPlayerDeaths().Count() / @Model.GetNpcDeaths().Count()
+            <span class='tooltip'>Player deaths / non-player deaths</span>
+        </span>
+    </h2>
+    @* TODO razor-ize *@
+    {% with popstats=population_timeline_chart_data(match.id) %}
+    {% if popstats %}
+    {% with chartLabels=popstats[0], chartData=popstats[1], chartMinY=popstats[2] %}
+    {% include "_timeline.html" %}
+    {% endwith %}{% endif %}{% endwith %}
+</div>
+<div class='centerpadded'>
+    <div class='gridcontainer'>
+        <div id='deaths' class='gridhalf'>
+            <h3>Deaths</h3>
+            @foreach(var death in Model.GetPlayerDeaths())
+            {
+             <div class='matchdeath'>
+               <em>@death.MindKey</em> as <strong>@death.MindName</strong>
+             </div>
+            }
+        </div>
+        <div id='antags' class='gridhalf'>
+            <h3>Antag objectives:</h3>
+            @* TODO reapproach this; need a per-faction method of handling things *@
+            @foreach (var antag in Model.GetUniqueAntagsByKey())
+            {
+                <div class='antag'>
+                    <div id='player'><span id='key'>{{antag.key}}</span><span id='name'> as {{antag.name}}</span></div>
+                    <div id='actor'>{{antag.role}}</div>
+                    {% for objective in match.get_objs_for_antag(antag.key) -%}
+                    <div class='objective {% if objective.objective_succeeded %}success{% else %}failure{% endif %}'>
+                        {{objective | obj_pretty}}
+                    </div>
+                    {% endfor -%}
+                    <ol>
+                        {%- for uppurchase in match.uplink_buys_by_key(antag.key) %}
+                        <li class='uplinkbuy'> {{uppurchase.bundle_path}}</li>
+                        {%- endfor -%}
+                    </ol>
+                    {%- for badass in match.badass_buys_by_key(antag.key) %}
+                    <li class='uplinkbuy'>Badass bundle:</li>
+                    <ol>
+                        {%- for item in badass.items -%}
+                        {{item_path}}
+                        {%- endfor -%}
+                        {%- endfor -%}
+                    </ol>
+                </div>
+            }
+        </div>
+        @*{% include ["gamemodes/_" + match.modes_string.lower() + ".html", "_gamemode.html"] %}*@
+    </div>
+</div>

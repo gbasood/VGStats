@@ -1,0 +1,42 @@
+﻿<h1>Welcome to /vg/station's statistics viewer!</h1>
+<div id='container-front' class='centerpadded-small'>
+    <div class='floatcontainer'>
+        <p>Cool stuff to note:</p>
+        <div class='floatleft'>
+            <p class='indented'>Number of matches logged: @ViewBag.matchCount</p>
+            <p class='indented'>Number of nukes set off: @ViewBag.nukedcount</p>
+            <p class='indented'>Explosions per match: {{'%0.2f' % explosionratio|float}}</p>
+            <p class='indented'>Deaths per match: {{'%0.2f' % deathratio|float}}</p>
+        </div>
+        <div class='floatleft'>
+            <p class>Map play percentage (last 30 days):</p>
+            @{
+                foreach (var mapx in (List<(string, int)>)ViewBag.mapPlayrate)
+                {
+                    <p class='indented'>@mapx.Item1: @mapx.Item2</p>
+                }
+
+            }
+        </div>
+    </div>
+    <p class='centertext warn'>Everything here is very much a work in progress. As such, match history may be wiped at any time.</p>
+    @if (ViewBag.lastMatch is Match && ViewBag.lastMatch != null)
+    {
+    <p class='centertext' style='margin-bottom: 0'>Last match:</p>
+    <a href='/match/@ViewBag.lastMatch.Id' style="width:100%">
+        <table class="single-match" id='match-container'>
+            <thead>
+            <td>Station Name</td>
+            <td>Map</td>
+            <td>Date &amp; Time</td>
+            <td>Crew Score</td>
+            <td>Player Deaths</td>
+            <td>View</td>
+            </thead>
+            <tbody>
+                @await Html.PartialAsync("~/Views/Components/_matchBar.cshtml", ViewBag.lastMatch as Match)
+            </tbody>
+        </table>
+    </a>
+    }
+</div>

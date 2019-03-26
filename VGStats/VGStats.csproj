@@ -5,12 +5,38 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\static\css\style.css" />
+    <None Include="wwwroot\static\img\favicon.png" />
+    <None Include="wwwroot\static\img\malf.gif" />
+    <None Include="wwwroot\static\img\mapbase1024.png" />
+    <None Include="wwwroot\static\img\modethumbs\ai malfunction.png" />
+    <None Include="wwwroot\static\img\modethumbs\autotraitor.png" />
+    <None Include="wwwroot\static\img\modethumbs\blob.png" />
+    <None Include="wwwroot\static\img\modethumbs\changeling.png" />
+    <None Include="wwwroot\static\img\modethumbs\cult.png" />
+    <None Include="wwwroot\static\img\modethumbs\death.png" />
+    <None Include="wwwroot\static\img\modethumbs\double agents.png" />
+    <None Include="wwwroot\static\img\modethumbs\extended.png" />
+    <None Include="wwwroot\static\img\modethumbs\heist.png" />
+    <None Include="wwwroot\static\img\modethumbs\meteor.gif" />
+    <None Include="wwwroot\static\img\modethumbs\meteor.png" />
+    <None Include="wwwroot\static\img\modethumbs\mixed.png" />
+    <None Include="wwwroot\static\img\modethumbs\nuclear emergency.png" />
+    <None Include="wwwroot\static\img\modethumbs\othermode.png" />
+    <None Include="wwwroot\static\img\modethumbs\ragin%27 mages.png" />
+    <None Include="wwwroot\static\img\modethumbs\revolution.png" />
+    <None Include="wwwroot\static\img\modethumbs\sandbox.png" />
+    <None Include="wwwroot\static\img\modethumbs\traitor+changeling.png" />
+    <None Include="wwwroot\static\img\modethumbs\traitor.png" />
+    <None Include="wwwroot\static\img\modethumbs\vampire.png" />
+    <None Include="wwwroot\static\img\modethumbs\wizard.PNG" />
+    <None Include="wwwroot\static\js\main.js" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
