@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using VGStats.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace VGStats
 {
@@ -34,6 +35,11 @@ namespace VGStats
 
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<ModelDbContext>(options =>
+            {
+                var connStr = Configuration.GetConnectionString("DefaultConnection");
+                options.UseMySql(connStr);
+            });
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

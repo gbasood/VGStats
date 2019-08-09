@@ -9,23 +9,31 @@ namespace VGStats.Controllers
 {
 	public class HomeController : Controller
 	{
-		// TODO place inside view model
-		public IActionResult Index()
+        
+        private readonly ModelDbContext db;
+
+        public HomeController(ModelDbContext db)
+        {
+            this.db = db;
+        }
+
+        // TODO place inside view model
+        public IActionResult Index()
 		{
-			ViewBag.matchCount = 0;
-			ViewBag.nukedCount = 0;
-			ViewBag.explosionRatio = 0;
-			ViewBag.deathRatio = 0;
-			ViewBag.mapPlayrate = new List<(string, int)>
-			{
-				("Test1", 10), ("Test2", 10)
-			};
-			// TODO get actual last match
-			using (var db = new ModelDbContext())
-			{
-				ViewBag.lastMatch = db.Matches.TakeLast(1).Single();
-			}			
-			return View();
+			//ViewBag.matchCount = 0;
+			//ViewBag.nukedCount = 0;
+			//ViewBag.explosionRatio = 0;
+			//ViewBag.deathRatio = 0;
+			//ViewBag.mapPlayrate = new List<(string, int)>
+			//{
+			//	("Test1", 10), ("Test2", 10)
+			//};
+			//// TODO get actual last match
+			//using (db)
+			//{
+   //             ViewBag.lastMatch = db.Matches.Reverse().Take(1);
+			//}
+			return View(new IndexViewModel(db));
 		}
 
 		public IActionResult About()

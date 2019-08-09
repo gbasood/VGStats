@@ -11,6 +11,7 @@
     <h2 id='mode'>
         @Model.MapName
         <span class='deaths'>
+            @* TODO: break this information up. label human and non-human with their own icons *@
             &#9760;@Model.GetPlayerDeaths().Count() / @Model.GetNpcDeaths().Count()
             <span class='tooltip'>Player deaths / non-player deaths</span>
         </span>
@@ -52,7 +53,7 @@
                         {%- endfor -%}
                     </ol>
                     {%- for badass in match.badass_buys_by_key(antag.key) %}
-                    <li class='uplinkbuy'>Badass bundle:</li>
+                    <span class='uplinkbuy'>Badass bundle:</span>
                     <ol>
                         {%- for item in badass.items -%}
                         {{item_path}}
