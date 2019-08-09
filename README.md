@@ -3,3 +3,14 @@ This application is a web-based statistics viewer. It parses statistics generate
 managed by this application.
 
 This is a (work in progress) rewrite of [vgstation-statistics-viewer](https://github.com/gbasood/vgstation-statistics-viewer), but in C# using ASP<span>.NET</span>.
+
+## Requirements
+ - MySQL/MariaDB server (for development)
+ - .NET Core CLI tools
+
+## Setting up your development database
+ - From the command line, ensure your working directory is the one with `VGStats.csproj`
+- Then, run `dotnet ef database update`
+
+## Creating a database migration
+ - Whenever the database models are changed, you must commit a migration so the production server will know what changes to make. To do so, run `dotnet ef migrations add MigrationName`, where `MigrationName` should be a descriptive name. More information on EF Core migrations is available at https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/
